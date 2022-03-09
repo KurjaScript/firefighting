@@ -11,11 +11,37 @@
         <div class="container-header">
             <div class="container-line"></div>
         </div>
+        <div class="tank-field-top">
+            <div class="company-name">
+                <el-tooltip class="item" effect="dark" placement="top">
+                    <div class="tank-field-name">{{currentCompanyData.areaName}}</div>
+                </el-tooltip>
+                <div class="tank-field-title" v-show="currentCompanyData.danger_source_info">{{currentCompanyData.danger_source_info}}</div>
+            </div>
+            <div class="garden-name">
+                <el-tooltip class="item" effect="dark" :content="gardenInfo.garden_address" placement="top">
+                    <div class="garden-address">{{gardenInfo.garden_address}}</div>
+                </el-tooltip>
+            </div>
+        </div>
     </div>
 </template>
 <script>
 export default{
-   
+    data(){
+        return {
+            currentCompanyData:{
+                areaName: '中通服咨询设计研究院',
+                danger_source_scale: '四级',
+                danger_source_info: '三级',
+            },
+            gardenInfo:{
+                garden_address: '新城科技园',
+
+            }
+        }
+    },
+
 }
 </script>
 <style lang="less" scoped>
@@ -66,4 +92,58 @@ export default{
         right: 0;
         background: #00ffde;
     }
+.tank-field_top {
+    height: 49px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    top: 31px;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 40px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.company-name {
+    height: 49px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    top: 31px;
+}
+.tank-field-name {
+    width: 380px;
+    height: 40px;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 40px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.garden-name {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+}
+.garden-address {
+    font-size: 16px;
+    width: 367px;
+    height: 20px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+
+
+
 </style>
