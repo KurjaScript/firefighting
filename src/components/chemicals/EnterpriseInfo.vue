@@ -35,4 +35,35 @@ export default{
         rgba(3, 40, 53, 0.29)
     );
 }
+.container-header {
+    display: flex;
+    height: 14px;
+    padding: 10px 19px 0 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.container-line {
+    width: 410px;
+    height: 1px;
+    background: rgba(0, 255, 222, 0.3);
+    position: relative;
+}
+    .container-line::before {
+        position: relative;
+        content: "";
+        width: 10px;
+        height: 3px;
+        top: -1px;
+        left: 0;
+        background: #00ffde;
+    }
+    .container-line::after {
+        position: relative;
+        contain: "";
+        width: 10px;
+        height: 3px;
+        top: -1px;
+        right: 0;
+        background: #00ffde;
+    }
 </style>
